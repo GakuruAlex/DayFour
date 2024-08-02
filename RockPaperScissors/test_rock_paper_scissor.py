@@ -5,13 +5,15 @@ from rock_paper_scissors import get_rock_paper_scissors_ascii, rock_paper_scisso
 
 #Test game choice random int generator
 class TestGetCompChoice:
-    def test_get_comp_choice(self):
+    def test_get_comp_choice_with_one(self):
         with patch("rock_paper_scissors.randint", return_value = 1):
             result =get_comp_choice()
             assert result == 1
+    def test_get_comp_choice_with_zero(self):
         with patch("rock_paper_scissors.randint", return_value = 0):
             result = get_comp_choice()
             assert result == 0
+    def test_get_comp_choice_with_two(self):
         with patch("rock_paper_scissors.randint", return_value = 2):
             result = get_comp_choice()
             assert result == 2
